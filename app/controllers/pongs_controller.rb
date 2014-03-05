@@ -57,7 +57,7 @@ class PongsController < ApplicationController
   end
 
   def pong_user_access?(pong)
-    admin? or (used_signed_in? and pong.user == current_user)
+    admin? or (user_signed_in? and pong.user == current_user)
   end
 
   def user_pong_params
