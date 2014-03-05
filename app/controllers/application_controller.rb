@@ -3,9 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user
-  helper_method :user_signed_in?
-  helper_method :correct_user?
+  helper_method :current_user, :user_signed_in?, :correct_user?, :admin?
 
   private
   def current_user
@@ -30,7 +28,7 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     if !current_user
       remember_location
-      redirect_to new_session_path
+      redirect_to signin_path
     end
   end
 
@@ -44,7 +42,7 @@ class ApplicationController < ActionController::Base
     user_signed_in? and current_user.admin?
   end
 
-  def remeber_location
+  def remember_location
     if request.get? and !request.xhr?
       session[:location] = request.url
     end

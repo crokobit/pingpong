@@ -2,6 +2,9 @@ Pingpong::Application.routes.draw do
 
   root :to => "home#index"
   resources :pongs do
+    member do
+      post :toggle
+    end
     resources :votes, only: [] do
       collection do
         post :dhh

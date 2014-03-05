@@ -5,7 +5,7 @@ class AppConfig
   end
 
   def self.admins
-    @@disqus_name ||= ENV['ADMINS'].split(",")
+    @@admins ||= ENV['ADMINS'].split(",")
   end
 
 end

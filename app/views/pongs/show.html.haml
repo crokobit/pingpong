@@ -1,4 +1,15 @@
 .row
+  - if admin?
+    .panel.panel-default
+      .panel-body
+        .pull-right
+          = link_to "Edit this ping-pong", edit_pong_path(pong), class: 'btn btn-primary'
+          = link_to "Destroy this ping-pong", pong_path(pong), method: :delete, class: 'btn btn-danger', confirm: "Are you sure? Obviously, can't be undone :) We don't even do backups..."
+          - if pong.accepted?
+            = link_to "Unaccept this ping-pong", toggle_pong_path(pong), method: :post, class: 'btn btn-danger', confirm: "Are you sure? It wont be visible anymore."
+          -else
+            = link_to "Accept this ping-pong", toggle_pong_path(pong), method: :post, class: 'btn btn-success', confirm: "Are you sure? It will be visible for everybody now."
+.row
   %h2
   .col-md-6
     .pull-left
@@ -11,36 +22,41 @@
   .col-md-6
     .pull-right
       = image_tag 'https://avatars.githubusercontent.com/u/2741'
-    %h2.text-right
-      dhh replied:
-    %p.text-right.lead
-      #{pong.answer}
+    - if pong.accepted?
+      %h2.text-right
+        dhh replied:
+      %p.text-right.lead
+        #{pong.answer}
+    - else
+      %h2 No answer yet. Ping-pong not accepted.
 
 .row
-  %hr
-  .col-md-12
-    .progress
-      .progress-bar.progress-bar-info{style: "width: #{pong.user_prc}%"}
-        #{pong.user_score}
-      .progress-bar.progress-bar-success{style: "width: #{pong.dhh_prc}%"}
-        #{pong.dhh_score}
-  .col-md-6
-    .pull-left
-      = link_to user_pong_votes_path(pong),  class: 'btn btn-primary', method: :post do
-        %i.glyphicon.glyphicon-hand-left
-        vote #{user}s version
-  .col-md-6
-    .pull-right
-      = link_to dhh_pong_votes_path(pong), class: 'btn btn-primary', method: :post do
-        vote dhhs version
-        %i.glyphicon.glyphicon-hand-right
-  .col-md-12
+  - if pong.accepted?
     %hr
+    .col-md-12
+      .progress
+        .progress-bar.progress-bar-info{style: "width: #{pong.user_prc}%"}
+          #{pong.user_score}
+        .progress-bar.progress-bar-success{style: "width: #{pong.dhh_prc}%"}
+          #{pong.dhh_score}
+    .col-md-6
+      .pull-left
+        = link_to user_pong_votes_path(pong),  class: 'btn btn-primary', method: :post do
+          %i.glyphicon.glyphicon-hand-left
+          vote #{user}s version
+    .col-md-6
+      .pull-right
+        = link_to dhh_pong_votes_path(pong), class: 'btn btn-primary', method: :post do
+          vote dhhs version
+          %i.glyphicon.glyphicon-hand-right
+    .col-md-12
+      %hr
 .row
   .col-md-6
     %script{src: "#{pong.gist}.js"}
-  .col-md-6
-    %script{src: "#{pong.dhh_gist}.js"}
+  - if pong.accepted?
+    .col-md-6
+      %script{src: "#{pong.dhh_gist}.js"}
 
 .row
   .col-md-12

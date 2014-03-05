@@ -1,0 +1,8 @@
+= simple_form_for pong do |f|
+  = f.input :gist, label: "Add a gist url with your code here:"
+  = f.input :description, as: :text, label: "Write a 1-2 sentences what the gist is about:"
+  = f.input :dhh_gist, label: "Gist url with the code to answer"
+  = f.input :answer, as: :text, label: "Write a 1-2 sentences with the answer:"
+
+  = f.button :submit, "Save ping-pong", class: 'btn btn-primary'
+
