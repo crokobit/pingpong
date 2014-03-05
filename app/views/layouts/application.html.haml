@@ -13,3 +13,8 @@
     .container{:role => "main", class: controller.controller_name }
       = render 'layouts/messages'
       = yield
+    %footer.container.text-center
+      %hr
+      Magic by #{link_to "netguru.co", "https://netguru.co"}
+      = link_to "https://twitter.com/madsheeppl" do
+        = image_tag("sheep.png")
