@@ -1,0 +1,47 @@
+.row
+  %h2
+  .col-md-6
+    .pull-left
+      = gravatar_image_tag user.email
+    %h2
+      #{user} propsed:
+    %p.lead
+      #{pong.description}
+
+  .col-md-6
+    .pull-right
+      = image_tag 'https://avatars.githubusercontent.com/u/2741'
+    %h2.text-right
+      dhh replied:
+    %p.text-right.lead
+      #{pong.answer}
+
+.row
+  %hr
+  .col-md-12
+    .progress
+      .progress-bar.progress-bar-info{style: "width: #{pong.user_prc}%"}
+        #{pong.user_score}
+      .progress-bar.progress-bar-success{style: "width: #{pong.dhh_prc}%"}
+        #{pong.dhh_score}
+  .col-md-6
+    .pull-left
+      = link_to user_pong_votes_path(pong),  class: 'btn btn-primary', method: :post do
+        %i.glyphicon.glyphicon-hand-left
+        vote #{user}s version
+  .col-md-6
+    .pull-right
+      = link_to dhh_pong_votes_path(pong), class: 'btn btn-primary', method: :post do
+        vote dhhs version
+        %i.glyphicon.glyphicon-hand-right
+  .col-md-12
+    %hr
+.row
+  .col-md-6
+    %script{src: "#{pong.gist}.js"}
+  .col-md-6
+    %script{src: "#{pong.dhh_gist}.js"}
+
+.row
+  .col-md-12
+    = render 'layouts/disqus'

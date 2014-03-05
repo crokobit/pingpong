@@ -1,8 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-# Environment variables (ENV['...']) can be set in the file .env file.
+Pong.create(
+  dhh_gist: 'https://gist.github.com/dhh/9333991',
+  gist: 'https://gist.github.com/madsheep/27c70654b6f8333b291e',
+  description: 'a new pong with dhh about some stuff',
+  accepted: true
+)

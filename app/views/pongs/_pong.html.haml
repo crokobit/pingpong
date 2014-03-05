@@ -1,0 +1,8 @@
+%li.lead
+  .pull-left= gravatar_image_tag(pong.user.email, 60)
+  Submited by: #{link_to pong.user, pong.user.github_url}
+  = link_to pong do
+    %p
+      #{pong.description}
+
+  %hr

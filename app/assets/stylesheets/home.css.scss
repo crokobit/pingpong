@@ -1,0 +1,15 @@
+.home {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      float: left;
+      width: 100%;
+      clear: both;
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+}
