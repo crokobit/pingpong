@@ -2,6 +2,8 @@ Pingpong::Application.routes.draw do
 
   root :to => "home#index"
   resources :pongs do
+    resource :account
+
     member do
       post :toggle
     end
