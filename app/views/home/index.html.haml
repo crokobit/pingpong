@@ -1,10 +1,19 @@
+
 .row
+  %h1 Code Ping Pong with DHH
   %p.lead
     Every now end then you can find #{link_to "David Heinemeier Hansson", "http://david.heinemeierhansson.com"} arguing with some poor folk, why some abstraction is not needed, and why given example could be done perfectly fine with stuff you can already find in rails.
   %p.lead
-    Recently, #{link_to "in this discussion", "https://news.ycombinator.com/item?id=7335211"} he suggested that he would love to do some more ping-pong over the code, since the abstract discussion itself feels weary.
+    Recently, #{link_to "in this discussion", "https://news.ycombinator.com/item?id=7335211"} he mentioned  he would love to do some more ping-pong over the code, since the abstract discussion feels weary.
   %p.lead
-    So here we go. Submit gist + description and maybe we can get DHH to present his version.
+    So let's do that. Login in with github and submit your gist
+    %strong (maximum 80 lines)
+    and description
+    %strong (2 sentences).
+  %p.lead
+    We will choose
+    %strong 5 best sumbitions
+    for DHH and - he promised to respond with his version.
 
 .row
   = link_to new_pong_path, class: 'btn btn-primary btn-submit' do
@@ -12,7 +21,7 @@
     = image_tag 'white-pong.png'
 
 .row
-  %h1 Recent Ping Pongs
+  %h1
   %hr
   %ul.pong_list
     = render pongs
