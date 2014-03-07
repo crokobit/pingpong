@@ -1,0 +1,32 @@
+
+development:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: pingpong_development
+  pool:     5
+  username: pingpong
+  password: 
+  template: template0
+  host: localhost
+ 
+ test:
+  host: localhost
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: pingpong_test
+  pool:     5
+  username: pingpong
+  password: 
+  template: template0
+
+production:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: pingpong_production
+  pool:     5
+  username: pingpong
+  password: 
+  template: template0
