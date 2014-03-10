@@ -1,0 +1,7 @@
+@mixin font-family($family, $weight)
+  font-family: $family
+  font-weight: $weight
+
+@mixin transition($property, $duration)
+  +transition-duration($duration)
+  +transition-property($property)

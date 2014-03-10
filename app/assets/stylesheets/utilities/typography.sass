@@ -1,0 +1,52 @@
+body
+  +font-family($regular-font-family, 400)
+  font-size: 14px
+  line-height: 24px
+  color: $second-color
+
+h1, h2, h3, h4, h5, h6, p, span, a, li, textarea, input, button
+  margin: 0
+  padding: 0
+  font-style: normal
+  font-variant: normal
+  text-decoration: none
+  -webkit-font-smoothing: antialiased
+  opacity: 0.99
+
+h1, h2, h3, h4
+  +font-family($light-font-family, 300)
+
+p, span, a, li, textarea, input
+  +font-family($regular-font-family, 400)
+
+h1, h2, h3, h4, h5
+  color: $base-color
+
+h2
+  font-size: 36px
+
+h3
+  font-size: 25px
+  line-height: 35px
+
+h5
+  +font-family($regular-font-family, 700)
+  font-size: 22px
+
+a
+  color: $base-color
+  &:hover
+    color: $base-color
+    text-decoration: underline
+
+blockquote, blockquote p
+  font-size: 15px
+  line-height: 26px
+
+
+.bold, b, strong
+  +font-family($regular-font-family, 700)
+  color: $base-color
+  a
+    +font-family($regular-font-family, 700)
+    color: $base-color
