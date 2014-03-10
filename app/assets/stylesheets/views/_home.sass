@@ -51,3 +51,24 @@
         background: image-url('icons/#{$icon}.png') no-repeat 26px 23px
     &:hover
       border-color: $base-color
+
+  .rockets
+    $size: 241px
+    margin: 50px auto 0
+    width: $size
+    height: $size
+    position: relative
+    span
+      width: $size
+      height: $size
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+    @each $el, $deg in ("red": 73deg, "green": -73deg, "shadow": 0)
+      .#{$el}
+        +transition(all, 0.3s)
+        +transform(rotate(0))
+        background: image-url('rocket/#{$el}.png') no-repeat center center
+      &:hover .#{$el}
+        +transform(rotate($deg))
