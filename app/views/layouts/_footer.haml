@@ -5,5 +5,6 @@
     = image_tag 'love.png', alt: 'love'
     by
     = link_to 'netguru.co', 'https://netguru.co', target: :blank
-  %p.text-center.socials
-    = link_to 'Follow @netguru', 'https://twitter.com/netguru', class: 'twitter-follow-button', data: { show_count: 'false', lans: 'en' }
+  .socials
+    = follow_on_twitter_button('https://twitter.com/netguru')
+    = follow_on_fb_button('https://www.facebook.com/netguru')
