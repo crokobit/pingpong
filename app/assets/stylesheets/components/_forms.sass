@@ -1,12 +1,16 @@
 .form-control
-  @extend %light
+  +font-family($regular-font-family, 400)
   +box-shadow(none)
-  padding: 10px 16px
-  font-size: 19px
+  padding: 8px 14px
+  font-size: 15px
   height: auto
   color: $second-color
   border: 1px solid $box-border-color
   background: $box-background-color
+  @media (min-width: $screen-sm)
+    +font-family($light-font-family, 300)
+    padding: 10px 16px
+    font-size: 19px
   &:focus
     +box-shadow(none)
     border-color: $base-color
