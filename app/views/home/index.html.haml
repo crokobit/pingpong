@@ -1,20 +1,21 @@
 
 .row
-  %h1 Code Ping Pong with DHH
-  %p.lead
-    Every now end then you can find #{link_to "David Heinemeier Hansson", "http://david.heinemeierhansson.com"} arguing with some poor folk, why some abstraction is not needed, and why given example could be done perfectly fine with stuff you can already find in rails.
-  %p.lead
-    Recently, #{link_to "in this discussion", "https://news.ycombinator.com/item?id=7335211"} he mentioned, he would love to do some more ping-pong over the code, instead of going into abstract debates.
-  %p.lead
-    So let's do that. Login in with github and submit your gist
-    %strong (maximum 80 lines - longer entries will be denied)
-    and short description.
-  %p.lead
-    After
-    %strong 23-03-2014
-    we will choose
-    %strong 5 best entries
-    for DHH - he agreed to respond with his version.
+  .col-lg-12
+    %h1 Code Ping Pong with DHH
+    %p.lead
+      Every now end then you can find #{link_to "David Heinemeier Hansson", "http://david.heinemeierhansson.com"} arguing with some poor folk, why some abstraction is not needed, and why given example could be done perfectly fine with stuff you can already find in rails.
+    %p.lead
+      Recently, #{link_to "in this discussion", "https://news.ycombinator.com/item?id=7335211"} he mentioned, he would love to do some more ping-pong over the code, instead of going into abstract debates.
+    %p.lead
+      So let's do that. Login in with github and submit your gist
+      %strong (maximum 80 lines - longer entries will be denied)
+      and short description.
+    %p.lead
+      After
+      %strong 23-03-2014
+      we will choose
+      %strong 5 best entries
+      for DHH - he agreed to respond with his version.
 
 .row
   = link_to new_pong_path, class: 'btn btn-primary btn-submit' do

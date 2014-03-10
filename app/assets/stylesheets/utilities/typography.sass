@@ -43,8 +43,10 @@ blockquote, blockquote p
   font-size: 15px
   line-height: 26px
 
+%light
+  +font-family($light-font-family, 300)
 
-.bold, b, strong
+.bold, b, strong, %bold
   +font-family($regular-font-family, 700)
   color: $base-color
   a

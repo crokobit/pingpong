@@ -16,6 +16,7 @@ gem 'pry-rails'
 gem 'simple_form'
 gem 'decent_exposure'
 gem 'draper'
+gem 'bourbon'
 
 group :development do
   gem 'better_errors'

@@ -1,14 +1,6 @@
-%nav.navbar.navbar-inverse.navbar-fixed-top
+%nav.navbar.border-bottom
   .container
-    .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      = link_to root_path, class: 'navbar-brand' do
-        = image_tag("white-pong.png")
-        Code Ping Pong
-    .collapse.navbar-collapse
-      %ul.nav.navbar-nav.pull-right
-        = render 'layouts/navigation_links'
+    .navbar__header.pull-left
+      = link_to 'Code Ping Pong', root_path
+    %ul.navbar__links.pull-right
+      = render 'layouts/navigation_links'
