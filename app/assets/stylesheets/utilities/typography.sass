@@ -1,6 +1,6 @@
 body
   +font-family($regular-font-family, 400)
-  font-size: 14px
+  font-size: 15px
   line-height: 24px
   color: $second-color
 
@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, textarea, input, button
   -webkit-font-smoothing: antialiased
   opacity: 0.99
 
-h1, h2, h3, h4
+h1, h2, h4
   +font-family($light-font-family, 300)
 
 p, span, a, li, textarea, input
@@ -25,9 +25,15 @@ h1, h2, h3, h4, h5
 h2
   font-size: 36px
 
+h3, h5
+  +font-family($regular-font-family, 700)
+
 h3
-  font-size: 25px
+  font-size: 21px
   line-height: 35px
+  @media (min-width: $screen-sm)
+    margin-bottom: 5px
+    font-size: 27px
 
 h5
   +font-family($regular-font-family, 700)
