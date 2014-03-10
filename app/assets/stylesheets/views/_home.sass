@@ -26,9 +26,11 @@
         line-height: 36px
 
   .steps
-    margin-bottom: 55px
+    margin-bottom: 15px
     .lead
       margin-bottom: 35px
+    @media (min-width: $screen-sm)
+      margin-bottom: 55px
 
   .step
     margin-bottom: 25px
@@ -54,10 +56,12 @@
 
   .rockets
     $size: 241px
-    margin: 50px auto 0
+    margin: 30px auto 0
     width: $size
     height: $size
     position: relative
+    @media (min-width: $screen-sm)
+      margin-top: 50px
     span
       width: $size
       height: $size
