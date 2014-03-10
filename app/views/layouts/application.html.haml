@@ -8,6 +8,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body{ class: "#{controller.controller_name}-#{controller.action_name}" }
+    #fb-root
     = render 'layouts/navigation/navigation'
     = render 'layouts/messages'
     = yield
