@@ -27,11 +27,12 @@
 
   .step
     margin-bottom: 25px
-    padding: 22px 25px
+    padding: 20px 25px 22px 25px
     border-radius: 4px
     border: 2px solid $border-color
     &__title
       +font-family($proxima-font-family, 400)
+      margin-left: 38px
       padding-bottom: 4px
       font-size: 15px
       text-transform: uppercase
@@ -39,3 +40,7 @@
       display: inline-block
     &__body
       padding-top: 10px
+    $icons: "netguru_review", "your_idea", "dhhs_response"
+    @each $icon in $icons
+      &.#{$icon}
+        background: image-url('icons/#{$icon}.png') no-repeat 26px 23px
