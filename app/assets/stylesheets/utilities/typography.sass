@@ -52,3 +52,10 @@ blockquote, blockquote p
   a
     +font-family($regular-font-family, 700)
     color: $base-color
+
+.lead
+  @extend %light
+  font-size: 19px
+  line-height: 32px
+  @media (min-width: $screen-sm)
+    font-size: 25px
