@@ -1,9 +1,7 @@
-%blockquote.bg-warning.text-warning
-  %h4 Warning!
-  %p
-    There is absolutly no guarantee your ping-pong proposal will get thorugh, and/or there will be any disussion over it. It might get deleted right away. Suck it in.
-= simple_form_for new_pong do |f|
-  = f.input :gist, label: "Add a gist url with your code here:"
-  = f.input :description, as: :text, label: "Write a 1-2 sentences what the gist is about:"
-  = f.button :submit, "Submit your ping-pong proposal", class: 'btn btn-primary'
+.row
+  .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
+    = simple_form_for new_pong do |f|
+      = f.input :gist, label: false, placeholder: 'Add a gist url with your code here'
+      = f.input :description, as: :text, label: false, placeholder: 'Write a 1-2 sentences what the gist is about'
+      = f.button :submit, 'Submit your ping-pong proposal', class: 'btn--lg btn--block'
 

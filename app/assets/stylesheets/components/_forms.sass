@@ -1,0 +1,15 @@
+.form-control
+  @extend %light
+  +box-shadow(none)
+  padding: 10px 16px
+  font-size: 19px
+  height: auto
+  color: $second-color
+  border: 1px solid $box-border-color
+  background: $box-background-color
+  &:focus
+    +box-shadow(none)
+    border-color: $base-color
+
+textarea
+  min-height: 150px
