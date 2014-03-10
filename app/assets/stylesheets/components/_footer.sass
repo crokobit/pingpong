@@ -1,5 +1,11 @@
 footer
-  padding: 65px 0
-  p
-    @extend %light
-    font-size: 23px
+  padding: 30px 0
+  @media (min-width: $screen-sm)
+    padding: 65px 0
+    p
+      +font-family($light-font-family, 300)
+      font-size: 23px
+  @media (max-width: $screen-sm)
+    img
+      width: 15px
+      height: 13px

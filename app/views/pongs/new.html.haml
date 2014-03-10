@@ -1,7 +1,9 @@
 .row
   .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
-    = simple_form_for new_pong do |f|
-      = f.input :gist, label: false, placeholder: 'Add a gist url with your code here'
-      = f.input :description, as: :text, label: false, placeholder: 'Write a 1-2 sentences what the gist is about'
-      = f.button :submit, 'Submit your ping-pong proposal', class: 'btn--lg btn--block'
+    .box
+      %h1.box__title Submit your ping-pong
+      = simple_form_for new_pong do |f|
+        = f.input :gist, label: false, placeholder: 'Add a gist url with your code here'
+        = f.input :description, as: :text, label: false, placeholder: 'Write a 1-2 sentences what the gist is about'
+        = f.button :submit, 'Submit your ping-pong proposal', class: 'btn--lg btn--block'
 
