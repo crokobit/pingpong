@@ -5,4 +5,4 @@
     = link_to signout_path, class: 'navbar__links__user' do
       = gravatar_image_tag current_user.email
 - else
-  %li= link_to 'Login', signin_path
+  %li= link_to 'Login', signin_path, class: 'btn--sm'
