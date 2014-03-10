@@ -1,6 +1,8 @@
 - if user_signed_in?
   - if admin?
-    %li= link_to "Submitted pongs", pongs_path
+    %li= link_to 'Submitted pongs', pongs_path, class: 'btn--sm'
+  - else
+    %li= link_to 'Submit pong!', new_pong, class: 'btn--sm'
   %li
     = link_to signout_path, class: 'navbar__links__user' do
       = gravatar_image_tag current_user.email
