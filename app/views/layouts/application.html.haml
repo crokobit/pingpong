@@ -5,6 +5,9 @@
     %title= content_for?(:title) ? yield(:title) : 'Pingpong'
     %meta{ name: 'description', content: "#{content_for?(:description) ? yield(:description) : 'Pingpong'}" }
     %meta{ property: 'og:image', content: "#{root_url}og_image.png" }
+    %meta{ property: 'og:title', content: 'Code Ping Pong with DHH' }
+    %meta{ property: 'og:description', content: 'Code Ping Pong with DHH' }
+    %link{ rel: 'shortcut icon', href: image_path('favicon.png'), type: 'image/png' }
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
