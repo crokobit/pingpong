@@ -4,7 +4,7 @@
   - else
     %li= link_to 'Submit pong!', new_pong, class: 'btn--sm hidden-xs'
   %li
-    = link_to signout_path, class: 'navbar__links__user' do
+    = link_to signout_path, class: 'navbar__links__user', data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Logout', rel: 'tooltip' do
       = gravatar_image_tag current_user.email
 - else
   %li= link_to 'Login', signin_path, class: 'btn--sm'

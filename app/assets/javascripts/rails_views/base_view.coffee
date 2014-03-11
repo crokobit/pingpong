@@ -8,6 +8,7 @@ class PingPong.RailsViews.BaseView extends Backbone.View
   initialize: () ->
     @initFacebook()
     @initTwitter()
+    $('a[rel=tooltip]').tooltip()
 
   initFacebook: () ->
     ((d, s, id) ->
