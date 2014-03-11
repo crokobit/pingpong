@@ -30,8 +30,8 @@ module ApplicationHelper
     end
   end
 
-  def custom_fb_sharer
-    link_to 'Share on fb', '#fb-share', class: 'btn--fb'
+  def custom_fb_sharer img_url
+    link_to 'Share on fb', '#fb-share', class: 'btn--fb', data: { img: img_url }
   end
 
   def custom_twitter_sharer params
