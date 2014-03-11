@@ -1,9 +1,10 @@
-%section.share.border-top-bottom
-  .row
-    .col-lg-12
-      %p.lead.text-center= label
-  .row
-    .col-lg-3.col-lg-offset-3
-      = custom_twitter_sharer({ text: twt[:text], via: twt[:via] })
-    .col-lg-3
-      = custom_fb_sharer
+%section.share-box.border-top-bottom
+  .container
+    .row
+      .col-lg-12
+        %p.lead.text-center= label
+    .row
+      .col-lg-4.col-lg-offset-2.col-md-5.col-md-offset-1.col-sm-6
+        = custom_twitter_sharer({ text: twt[:text], via: twt[:via] })
+      .col-lg-4.col-md-5.col-sm-6
+        = custom_fb_sharer
