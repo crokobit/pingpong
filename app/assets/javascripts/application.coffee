@@ -14,7 +14,6 @@ window.PingPong =
       @currentView = null
 
     viewName = $('body').data('view-name')
-    console.log viewName
     @currentView = new PingPong.RailsViews[viewName]() if PingPong.RailsViews[viewName]?
 
   initBaseView: ->
