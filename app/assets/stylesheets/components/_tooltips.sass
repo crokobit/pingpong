@@ -1,0 +1,13 @@
+.tooltip
+  $bg: #333
+  opacity: 0.8
+  .tooltip-inner
+    +font-family($proxima-font-family, 400)
+    padding: 6px 10px 4px 10px
+    text-transform: uppercase
+    background: $bg
+    font-size: 13px
+  $directions: top left right bottom
+  @each $direction in $directions
+    &.#{$direction} .tooltip-arrow
+      border-#{$direction}-color: $bg
