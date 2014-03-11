@@ -30,4 +30,12 @@ module ApplicationHelper
     end
   end
 
+  def custom_fb_sharer
+    link_to 'Share on fb', '#fb-share', class: 'btn--fb'
+  end
+
+  def custom_twitter_sharer params
+    link_to 'Tweet', '#tweet', class: 'btn--twt', data: { text: params[:text], via: params[:via] }
+  end
+
 end
