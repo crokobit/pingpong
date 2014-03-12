@@ -15,6 +15,8 @@
 
   .navbar, .messages
     padding: 0 30px
+    @media (max-width: $screen-sm)
+      padding: 0 10px
     .container
       width: 100%
 
@@ -25,10 +27,18 @@
 
   .full-screen-container
     padding: 30px 40px 15px 40px
+    @media (max-width: $screen-sm)
+      padding: 30px 10px 15px 10px
 
   .admin-panel
     margin: 0 0 10px 0
     padding: 0 45px 30px 45px
+    @media (max-width: $screen-sm)
+      padding: 0 25px 30px 25px
+      .btn
+        margin-bottom: 10px
+        width: 100%
+        display: block
 
   .player
     padding: 0 10px 20px 10px
@@ -39,6 +49,8 @@
       top: 0
     &__bubble
       margin: 0 0 30px 0
+      @media (max-width: $screen-sm)
+        margin: 0
       border: 3px solid $border-color
       border-radius: 4px
       h3
@@ -63,6 +75,9 @@
       &__score
         padding: 40px 0 48px 0
         font-size: 80px
+        @media (max-width: $screen-sm)
+          padding: 20px 0 24px 0
+          font-size: 40px
 
   @mixin player($side)
     $opposite: left
@@ -73,14 +88,19 @@
       .player__img
         margin-#{$opposite}:  22px
         #{$side}: 10px
+        @media (max-width: $screen-sm)
+          display: none
       .player__bubble
         margin-#{$side}: 85px
+        @media (max-width: $screen-sm)
+          margin-#{$side}: 0
 
   +player(left)
   +player(right)
 
   .disqus_thread
     padding: 50px 0
+    overflow: hidden
 
 .pongs-index
 
