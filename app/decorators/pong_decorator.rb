@@ -18,4 +18,12 @@ class PongDecorator < Draper::Decorator
     end
   end
 
+  def voted_for_dhh? user
+    pong.votes.from_user(user).dhh.present?
+  end
+
+  def voted_for_user? user
+    pong.votes.from_user(user).user_votes.present?
+  end
+
 end

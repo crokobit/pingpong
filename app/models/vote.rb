@@ -4,6 +4,7 @@ class Vote < ActiveRecord::Base
 
   scope :dhh, -> { where(dhh: true) }
   scope :user_votes, -> { where(dhh: false) }
+  scope :from_user, -> (user){ where(user_id: user.id) }
 
   after_save :count_votes
 

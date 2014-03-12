@@ -66,10 +66,14 @@
         text-align: center
         display: block
       &__vote
-        padding: 15px 0
-        font-size: 30px
-        background: $box-light-blue-color
-        &:hover
+        a, span
+          +font-family($regular-font-family, 700)
+          padding: 15px 0
+          font-size: 30px
+          display: block
+        a
+          background: $box-light-blue-color
+        a:hover, span
           background: $border-color
           color: $white
       &__score
