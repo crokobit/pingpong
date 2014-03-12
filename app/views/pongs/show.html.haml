@@ -1,10 +1,11 @@
 = render 'pongs/admin_panel' if admin?
 .full-screen-container
   .row
-    = render 'pongs/player/player', dhh: false
-    = render 'pongs/player/player', dhh: true
-  .row
-    = render 'pongs/player/gist', dhh: false
-    = render 'pongs/player/gist', dhh: true
+    .col-lg-6
+      = render 'pongs/player/player', dhh: false
+      = render 'pongs/player/gist', dhh: false
+    .col-lg-6
+      = render 'pongs/player/player', dhh: true
+      = render 'pongs/player/gist', dhh: true
 = render 'shared/share', label: 'Pretty cool, huh? Share!', twt: { text: 'Great code ping-pong fight!', via: 'netguru' }
 = render 'layouts/disqus'

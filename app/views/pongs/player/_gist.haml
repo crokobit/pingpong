@@ -1,4 +1,5 @@
 - if pong.accepted? || !dhh
-  .col-lg-6
-    .player
-      %script{ src: (dhh ?  "#{pong.dhh_gist}.js" : "#{pong.gist}.js") }
+  .row
+    .col-lg-12
+      .player
+        %script{ src: (dhh ?  "#{pong.dhh_gist}.js" : "#{pong.gist}.js") }
