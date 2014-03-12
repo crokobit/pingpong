@@ -14,10 +14,10 @@
 .pongs-show
 
   .full-screen-container
-    padding: 0 40px
+    padding: 30px 40px 15px 40px
 
   .player
-    padding: 0 10px
+    padding: 0 10px 20px 10px
     position: relative
     &__img
       +circle(65px)
@@ -57,8 +57,8 @@
     .player--#{$side}
       @extend .player
       .player__img
-        #{$side}: 10px
         margin-#{$opposite}:  22px
+        #{$side}: 10px
       .player__bubble
         margin-#{$side}: 85px
 
