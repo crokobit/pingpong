@@ -6,13 +6,15 @@
         .player__bubble__info
           %h3 DHH replied
           %p= pong.accepted? ? pong.answer : 'No answer yet. Ping-pong not accepted.'
-        = link_to 'Vote!', dhh_pong_votes_path(pong), class: 'player__bubble__vote'
-        %p.player__bubble__score= "#{pong.dhh_prc}%"
+        - if pong.accepted?
+          = link_to 'Vote!', dhh_pong_votes_path(pong), class: 'player__bubble__vote'
+          %p.player__bubble__score= "#{pong.dhh_prc}%"
     - else
       = gravatar_image_tag(user.email, 64, 'player__img')
       .player__bubble
         .player__bubble__info
           %h3 #{user} propsed
           %p= pong.description
-        = link_to 'Vote!', user_pong_votes_path(pong), class: 'player__bubble__vote'
-        %p.player__bubble__score= "#{pong.user_prc}%"
+        - if pong.accepted?
+          = link_to 'Vote!', user_pong_votes_path(pong), class: 'player__bubble__vote'
+          %p.player__bubble__score= "#{pong.user_prc}%"
