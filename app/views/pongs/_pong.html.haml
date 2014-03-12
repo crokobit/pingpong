@@ -1,8 +1,6 @@
-%li.lead.row
-  .pull-left= image_tag("pong.png")
-  .pull-right= gravatar_image_tag(pong.user.email)
-  Submited by: #{link_to pong.user, pong.user.github_url}
-  = link_to pong do
-    %p
-      #{pong.description}
-
+.row.pong
+  .col-lg-12.border-top
+    = gravatar_image_tag(pong.user.email, 64, 'pong__img')
+    %h3.pong__title= pong.user
+    %p.lead.pong__body= pong.description
+    = link_to '', pong, class: 'box-link'
