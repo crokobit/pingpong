@@ -23,7 +23,7 @@
           - if pong.accepted?
             .player__bubble__vote
               - if pong.voted_for_user? current_user
-                %span Voted for #{user.nickname}
+                %span Voted for #{user}
               - else
                 = link_to 'Vote!', user_pong_votes_path(pong)
             %p.player__bubble__score= "#{pong.user_prc}%"
