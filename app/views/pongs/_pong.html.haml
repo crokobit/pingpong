@@ -1,6 +1,7 @@
 .row.pong
-  .col-lg-12.border-top
-    = gravatar_image_tag(pong.user.email, 64, 'pong__img')
-    %h3.pong__title= pong.user
-    %p.lead.pong__body= pong.description
-    = link_to '', pong, class: 'box-link'
+  .col-lg-12
+    .border-top
+      = gravatar_image_tag(pong.user.email, 64, 'pong__img')
+      %h3.pong__title= pong.user
+      %p.lead.pong__body= pong.description
+      = link_to '', pong, class: 'box-link'
