@@ -5,3 +5,5 @@
   .row
     = render 'pongs/player/gist', dhh: false
     = render 'pongs/player/gist', dhh: true
+= render 'shared/share', label: 'Pretty cool, huh? Share!', twt: { text: 'Great code ping-pong fight!', via: 'netguru' }
+= render 'layouts/disqus'
