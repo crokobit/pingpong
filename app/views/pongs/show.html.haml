@@ -1,16 +1,7 @@
 .full-screen-container
   .row
-    = render 'player', dhh: false
-    = render 'player', dhh: true
+    = render 'pongs/player/player', dhh: false
+    = render 'pongs/player/player', dhh: true
   .row
-    .col-lg-6
-      .player
-        .row
-          .col-lg-12
-            %script{ src: "#{pong.gist}.js" }
-    .col-lg-6
-      .player
-        - if pong.accepted?
-          .row
-            .col-lg-12
-              %script{ src: "#{pong.dhh_gist}.js" }
+    = render 'pongs/player/gist', dhh: false
+    = render 'pongs/player/gist', dhh: true
