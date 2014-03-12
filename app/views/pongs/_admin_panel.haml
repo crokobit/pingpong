@@ -1,0 +1,7 @@
+.admin-panel.border-bottom
+  = link_to 'Edit this ping-pong', edit_pong_path(pong), class: 'btn'
+  = link_to 'Destroy this ping-pong', pong_path(pong), method: :delete, class: 'btn', confirm: "Are you sure? Obviously, can't be undone :) We don't even do backups..."
+  - if pong.accepted?
+    = link_to 'Unaccept this ping-pong', toggle_pong_path(pong), method: :post, class: 'btn', confirm: "Are you sure? It wont be visible anymore."
+  - else
+    = link_to 'Accept this ping-pong', toggle_pong_path(pong), method: :post, class: 'btn', confirm: 'Are you sure? It will be visible for everybody now.'
