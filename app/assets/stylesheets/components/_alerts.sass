@@ -1,0 +1,20 @@
+%alert
+  color: $white
+  border-radius: 0
+  border: 0
+  .close
+    position: relative
+    z-index: 3
+    opacity: 1
+    text-shadow: none
+    color: $white
+    &:hover
+      opacity: 0.6
+
+.alert-success
+  @extend %alert
+  background: #54c35f
+
+.alert-danger
+  @extend %alert
+  background: #ff4a19
