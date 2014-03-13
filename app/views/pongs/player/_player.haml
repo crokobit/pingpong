@@ -3,27 +3,27 @@
     %div{ class: "player#{(dhh ? '--right' : '--left')}" }
       - if dhh
         = image_tag 'https://avatars.githubusercontent.com/u/2741', class: 'player__img'
-        .player__bubble
-          .player__bubble__info
+        .bubble
+          .bubble__info
             %h3 DHH replied
             %p= pong.accepted? ? pong.answer : 'No answer yet. Ping-pong not accepted.'
           - if pong.accepted?
-            .player__bubble__vote
+            .bubble__vote
               - if pong.voted_for_dhh? current_user
                 %span Voted for DHH
               - else
                 = link_to 'Vote!', dhh_pong_votes_path(pong), method: :post
-            %p.player__bubble__score= "#{pong.dhh_prc}%"
+            %p.bubble__score= "#{pong.dhh_prc}%"
       - else
         = gravatar_image_tag(user.email, 64, 'player__img')
-        .player__bubble
-          .player__bubble__info
+        .bubble
+          .bubble__info
             %h3 #{user} propsed
             %p= pong.description
           - if pong.accepted?
-            .player__bubble__vote
+            .bubble__vote
               - if pong.voted_for_user? current_user
                 %span Voted for #{user}
               - else
                 = link_to 'Vote!', user_pong_votes_path(pong), method: :post
-            %p.player__bubble__score= "#{pong.user_prc}%"
+            %p.bubble__score= "#{pong.user_prc}%"

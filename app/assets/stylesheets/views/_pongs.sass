@@ -47,41 +47,42 @@
       +circle(65px)
       position: absolute
       top: 0
-    &__bubble
-      margin: 0 0 30px 0
-      @media (max-width: $screen-sm)
-        margin: 0
-      border: 3px solid $border-color
-      border-radius: 4px
-      h3
-        margin-bottom: 8px
-        font-size: 23px
-      &__info
-        padding: 15px 23px 19px 23px
-      &__vote, &__score
+
+  .bubble
+    margin: 0 0 30px 0
+    @media (max-width: $screen-sm)
+      margin: 0
+    border: 3px solid $border-color
+    border-radius: 4px
+    h3
+      margin-bottom: 8px
+      font-size: 23px
+    &__info
+      padding: 15px 23px 19px 23px
+    &__vote, &__score
+      +font-family($regular-font-family, 700)
+      width: 100%
+      border-top: 3px solid $border-color
+      color: $base-color
+      text-align: center
+      display: block
+    &__vote
+      a, span
         +font-family($regular-font-family, 700)
-        width: 100%
-        border-top: 3px solid $border-color
-        color: $base-color
-        text-align: center
+        padding: 15px 0
+        font-size: 30px
         display: block
-      &__vote
-        a, span
-          +font-family($regular-font-family, 700)
-          padding: 15px 0
-          font-size: 30px
-          display: block
-        a
-          background: $box-light-blue-color
-        a:hover, span
-          background: $border-color
-          color: $white
-      &__score
-        padding: 40px 0 48px 0
-        font-size: 80px
-        @media (max-width: $screen-sm)
-          padding: 20px 0 24px 0
-          font-size: 40px
+      a
+        background: $box-light-blue-color
+      a:hover, span
+        background: $border-color
+        color: $white
+    &__score
+      padding: 40px 0 48px 0
+      font-size: 80px
+      @media (max-width: $screen-sm)
+        padding: 20px 0 24px 0
+        font-size: 40px
 
   @mixin player($side)
     $opposite: left
@@ -94,7 +95,7 @@
         #{$side}: 10px
         @media (max-width: $screen-sm)
           display: none
-      .player__bubble
+      .bubble
         margin-#{$side}: 85px
         @media (max-width: $screen-sm)
           margin-#{$side}: 0
