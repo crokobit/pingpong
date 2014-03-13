@@ -19,11 +19,11 @@ class PongDecorator < Draper::Decorator
   end
 
   def voted_for_dhh? user
-    pong.votes.from_user(user).dhh.present?
+    object.votes.from_user(user).dhh.present? if user.present?
   end
 
   def voted_for_user? user
-    pong.votes.from_user(user).user_votes.present?
+    object.votes.from_user(user).user_votes.present? if user.present?
   end
 
 end
