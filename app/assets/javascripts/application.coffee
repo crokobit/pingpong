@@ -1,4 +1,5 @@
 #= require jquery
+#= require jquery_ujs
 #= require bootstrap
 #= require js_stack/base/underscore/
 #= require js_stack/base/backbone/

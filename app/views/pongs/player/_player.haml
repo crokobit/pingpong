@@ -25,5 +25,5 @@
               - if pong.voted_for_user? current_user
                 %span Voted for #{user}
               - else
-                = link_to 'Vote!', user_pong_votes_path(pong)
+                = link_to 'Vote!', user_pong_votes_path(pong), method: :post
             %p.player__bubble__score= "#{pong.user_prc}%"
