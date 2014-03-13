@@ -20,7 +20,7 @@ module ApplicationHelper
 
   def follow_on_twitter_button url
     content_tag(:div, class: 'twt-follow-box pull-left') do
-      link_to 'Follow @netguru', url, class: 'twitter-follow-button', data: { show_count: 'false', lans: 'en' }
+      link_to "Follow @#{url.split('/').last}", url, class: 'twitter-follow-button', data: { show_count: 'false', lans: 'en' }
     end
   end
 
