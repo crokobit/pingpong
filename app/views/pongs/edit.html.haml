@@ -1,16 +1,1 @@
-.container
-  .row
-    .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
-      %p.text-center.rockets
-        = image_tag 'rockets-small.png'
-      .box
-        %h1.box__title Edit ping-pong
-        = simple_form_for pong do |f|
-          = f.input :gist, label: false, placeholder: 'Add a gist url with your code here'
-          = f.input :description, as: :text, label: false, placeholder: 'Write a 1-2 sentences what the gist is about'
-          = f.input :dhh_gist, label: false, placeholder: 'Gist url with the code to answer'
-          = f.input :answer, as: :text, label: false, placeholder: 'Write a 1-2 sentences with the answer'
-          = f.button :submit, 'Save ping-pong', class: 'btn--lg btn--block'
-
-
-
+= render 'form', title: 'Edit your ping-pong', is_new: false, target_pong: pong
