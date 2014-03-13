@@ -9,6 +9,12 @@ class PingPong.RailsViews.BaseView extends Backbone.View
     @initFacebook()
     @initTwitter()
     $('a[rel=tooltip]').tooltip()
+    @closeAlerts()
+
+  closeAlerts: () ->
+    setInterval (=>
+      $('.alert').slideUp(600)
+    ), 3000
 
   initFacebook: () ->
     ((d, s, id) ->
