@@ -21,20 +21,5 @@
         %h3.text-center How does it work?
         %p.lead.text-center Only 3 steps lorem ipsum dolores Ania copy master.
     .row
-      .col-md-4
-        .step.your_idea
-          %h5.step__title Your idea
-          %p.step__body Pick a piece of real code ready for discussion. Submit a gist URL with your snippet. The example should not exceed 80 lines so choose wisely.
-      .col-md-4
-        .step.netguru_review
-          %h5.step__title Netguru review
-          %p.step__body
-            After
-            %strong 23-03-2014
-            we will choose
-            %strong 5 best entries
-            for DHH. Lorem ipusm dolores is simply a dummy text.
-      .col-md-4
-        .step.dhhs_response
-          %h5.step__title DHH's response
-          %p.step__body In return, DHH replies with his snippet. Say goodbye to vague architectural debates. This game is all about code cases. Game. Set. Match.
+      - ['your_idea', 'netguru_review', 'dhhs_response'].each do |step|
+        = render 'step', name: step
