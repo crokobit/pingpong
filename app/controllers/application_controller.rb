@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_reviewer!
-    redirect_to root_url unless judge?
+    redirect_to root_url unless reviewer?
   end
 
   def authenticate_admin!
@@ -47,11 +47,7 @@ class ApplicationController < ActionController::Base
   end
 
   def reviewer?
-    user_signed_in? and current_user.reviewer?
-  end
-
-  def judge?
-    admin? or reviewer?
+    admin? or (user_signed_in? and current_user.reviewer?)
   end
 
   def remember_location
