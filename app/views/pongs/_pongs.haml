@@ -1,0 +1,13 @@
+- if pongs.present?
+  .row
+    .col-lg-12
+      %h2= "#{title} (#{pongs.count})"
+  .pongs.border-bottom
+    - pongs.each do |p|
+      .row.pong
+        .col-lg-12
+          .border-top
+            = gravatar_image_tag(p.user.email, 64, 'pong__img')
+            %h3.pong__title= p.user
+            %p.lead.pong__body= p.description
+            = link_to '', p, class: 'box-link'
