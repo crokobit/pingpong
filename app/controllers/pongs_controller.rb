@@ -1,7 +1,7 @@
 class PongsController < ApplicationController
 
-  before_filter :authenticate_admin!, except: [:show, :new, :index]
-  before_filter :authenticate_user!, only: [:new]
+  before_filter :authenticate_admin!, except: [:new, :create, :index, :show]
+  before_filter :authenticate_user!, only: [:new, :create]
   before_filter :check_pong, only: [:show]
 
   expose(:pong){ PongDecorator.decorate Pong.find(params[:id]) }
@@ -58,7 +58,7 @@ class PongsController < ApplicationController
   end
 
   def pong_user_access?(pong)
-    admin? or (user_signed_in? and pong.user == current_user)
+    admin? or reviewer? or (user_signed_in? and pong.user == current_user)
   end
 
   def user_pong_params

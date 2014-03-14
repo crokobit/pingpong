@@ -4,8 +4,9 @@
     .col-lg-6
       = render 'pongs/player/player', dhh: false
       = render 'pongs/player/gist', dhh: false
-    .col-lg-6
-      = render 'pongs/player/player', dhh: true
-      = render 'pongs/player/gist', dhh: true
+    - if pong.accepted?
+      .col-lg-6
+        = render 'pongs/player/player', dhh: true
+        = render 'pongs/player/gist', dhh: true
 = render 'shared/share', label: 'Pretty cool, huh? Share!', twt: { text: "Wow, I've just played a code ping pong with @DHH #codepingpong #ror #wrocloverb", via: 'netguru' }
 = render 'layouts/disqus'

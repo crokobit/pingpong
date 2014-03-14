@@ -27,3 +27,8 @@
               - else
                 = link_to 'Vote!', user_pong_votes_path(pong), method: :post
             %p.bubble__score= "#{pong.user_prc}%"
+          - else
+            - if reviewer? or admin?
+              .bubble__vote
+                = link_to 'Up!', '#'
+                = link_to 'Down!', '#'
