@@ -3,6 +3,7 @@ class PongsController < ApplicationController
   before_filter :authenticate_admin!, except: [:new, :create, :index, :show]
   before_filter :authenticate_user!, only: [:new, :create]
   before_filter :check_pong, only: [:show]
+  before_filter :check_submissions_status, only: [:create]
 
   expose(:pong){ PongDecorator.decorate Pong.find(params[:id]) }
   expose(:user){ pong.user }
@@ -67,6 +68,10 @@ class PongsController < ApplicationController
 
   def pong_params
     params.fetch(:pong, {}).permit(:gist, :description, :dhh_gist, :answer)
+  end
+
+  def check_submissions_status
+    redirect_to new_pong_path unless PublicConfig.open_for_submissions
   end
 
 end

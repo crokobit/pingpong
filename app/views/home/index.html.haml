@@ -11,8 +11,9 @@
           Code Ping Pong with #{link_to 'DHH', 'http://david.heinemeierhansson.com', target: :blank }
         %p.lead.text-center
           Recently, #{link_to 'in this discussion', 'https://news.ycombinator.com/item?id=7335211', target: :blank } DHH mentioned, that he would love to do some more ping-pong over the code, instead of going into abstract debates.
-        %p.text-center
-          = link_to 'Submit your ping-pong for DHH', new_pong_path, class: 'btn--lg'
+        - if PublicConfig.open_for_submissions
+          %p.text-center
+            = link_to 'Submit your ping-pong for DHH', new_pong_path, class: 'btn--lg'
 = render 'shared/share', label: 'Pretty cool, huh? Share!', twt: { text: "Wow, I've just played a code ping pong with @DHH", via: 'codepingpong' }
 %section.steps
   .container
