@@ -8,4 +8,8 @@ class AppConfig
     @@admins ||= ENV['ADMINS'].split(",")
   end
 
+  def self.reviewers
+    @@reviewers ||= ENV['REVIEWERS'].split(",")
+  end
+
 end

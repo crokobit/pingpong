@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :user_signed_in?, :correct_user?, :admin?
+  helper_method :current_user, :user_signed_in?, :correct_user?, :admin?, :reviewer?
 
   private
   def current_user
@@ -40,6 +40,10 @@ class ApplicationController < ActionController::Base
 
   def admin?
     user_signed_in? and current_user.admin?
+  end
+
+  def reviewer?
+    user_signed_in? and current_user.reviewer?
   end
 
   def remember_location

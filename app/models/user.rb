@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
     nickname && nickname.in?(AppConfig.admins)
   end
 
+  def reviewer?
+    nickname && nickname.in?(AppConfig.reviewers)
+  end
+
   def github_url
     "https://github.com/#{nickname}"
   end

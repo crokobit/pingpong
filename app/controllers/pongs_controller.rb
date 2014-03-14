@@ -8,7 +8,7 @@ class PongsController < ApplicationController
   expose(:user){ pong.user }
   expose(:new_pong){ current_user.pongs.new }
   expose(:accepted_pongs){ Pong.accepted }
-  expose(:pending_pongs){ admin? ? Pong.pending : nil }
+  expose(:pending_pongs){ admin? || reviewer? ? Pong.pending : nil }
   expose(:my_pongs){ user_signed_in? ? Pong.from_user(current_user) : nil }
 
   def show
