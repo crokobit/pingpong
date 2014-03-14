@@ -13,13 +13,13 @@
           Recently, #{link_to 'in this discussion', 'https://news.ycombinator.com/item?id=7335211', target: :blank } DHH mentioned, that he would love to do some more ping-pong over the code, instead of going into abstract debates.
         %p.text-center
           = link_to 'Submit your ping-pong for DHH', new_pong_path, class: 'btn--lg'
-= render 'shared/share', label: 'Pretty cool, huh? Share!', twt: { text: "Wow, I've just played a code ping pong with @DHH #codepingpong #ror #wrocloverb", via: 'netguru' }
+= render 'shared/share', label: 'Pretty cool, huh? Share!', twt: { text: "Wow, I've just played a code ping pong with @DHH #{root_url}", via: 'netguru' }
 %section.steps
   .container
     .row
       .col-lg-10.col-lg-offset-1
         %h3.text-center How does it work?
-        %p.lead.text-center Only 3 steps lorem ipsum dolores Ania copy master.
+        %p.lead.text-center Submit your code. Win the review round. Get a response from DHH. Profit.
     .row
-      - ['your_idea', 'netguru_review', 'dhhs_response'].each do |step|
+      - ['your_idea', 'review_round', 'dhhs_response'].each do |step|
         = render 'step', name: step
