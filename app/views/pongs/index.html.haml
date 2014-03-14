@@ -1,4 +1,9 @@
 .container
+  - if my_pongs.present?
+    .row
+      .col-lg-12
+        %h2 My ping-pongs (#{my_pongs.count})
+    .pongs.border-bottom= render my_pongs
   - if accepted_pongs.present?
     .row
       .col-lg-12

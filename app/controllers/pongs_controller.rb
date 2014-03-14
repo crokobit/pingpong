@@ -1,6 +1,6 @@
 class PongsController < ApplicationController
 
-  before_filter :authenticate_admin!, except: [:show, :new]
+  before_filter :authenticate_admin!, except: [:show, :new, :index]
   before_filter :authenticate_user!, only: [:new]
   before_filter :check_pong, only: [:show]
 
@@ -8,7 +8,8 @@ class PongsController < ApplicationController
   expose(:user){ pong.user }
   expose(:new_pong){ current_user.pongs.new }
   expose(:accepted_pongs){ Pong.accepted }
-  expose(:pending_pongs){ Pong.pending }
+  expose(:pending_pongs){ admin? ? Pong.pending : nil }
+  expose(:my_pongs){ user_signed_in? ? Pong.from_user(current_user) : nil }
 
   def show
   end

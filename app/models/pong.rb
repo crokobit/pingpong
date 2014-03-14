@@ -7,4 +7,6 @@ class Pong < ActiveRecord::Base
   default_scope -> { order(created_at: :desc) }
   scope :accepted, -> { where(accepted: true) }
   scope :pending, -> { where(accepted: false) }
+  scope :from_user, -> (user){ where(user_id: user.id) }
+
 end
