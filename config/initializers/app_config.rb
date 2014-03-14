@@ -9,7 +9,7 @@ class AppConfig
   end
 
   def self.reviewers
-    @@reviewers ||= ENV['REVIEWERS'].split(",")
+    @@reviewers ||= ENV['REVIEWERS'].split(",") if ENV['REVIEWERS'].present?
   end
 
 end
