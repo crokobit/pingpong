@@ -26,4 +26,12 @@ class PongDecorator < Draper::Decorator
     object.votes.from_user(user).user_votes.present? if user.present?
   end
 
+  def voted_up? user
+    object.rates.from_user(user).up.present? if user.present?
+  end
+
+  def voted_down? user
+    object.rates.from_user(user).down.present? if user.present?
+  end
+
 end

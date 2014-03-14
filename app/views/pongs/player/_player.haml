@@ -18,7 +18,9 @@
         = gravatar_image_tag(user.email, 64, 'player__img')
         .bubble
           .bubble__info
-            %h3 #{user} propsed
+            %h3
+              = "#{user} propsed"
+              %span.label.label-default= "score: #{pong.rating}"
             %p= pong.description
           - if pong.accepted?
             .bubble__vote
@@ -30,5 +32,11 @@
           - else
             - if reviewer?
               .bubble__vote
-                = link_to 'Up!', up_pong_rates_path(pong), method: :post
-                = link_to 'Down!', down_pong_rates_path(pong), method: :post
+                - if pong.voted_down? current_user
+                  = link_to 'Up!', up_pong_rates_path(pong), method: :post
+                - else
+                  %span Voted up!
+                - if pong.voted_up? current_user
+                  = link_to 'Down!', down_pong_rates_path(pong), method: :post
+                - else
+                  %span Voted down!

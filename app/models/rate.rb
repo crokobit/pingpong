@@ -3,6 +3,7 @@ class Rate < ActiveRecord::Base
   belongs_to :user
 
   scope :up, -> { where(up: true) }
+  scope :down, -> { where(up: false) }
   scope :from_user, -> (user){ where(user_id: user.id) }
 
   after_save :count_rating
