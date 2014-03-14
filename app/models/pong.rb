@@ -5,9 +5,8 @@ class Pong < ActiveRecord::Base
   belongs_to :user
 
   validates :gist, :description, presence: true
-  default_scope -> { order(created_at: :desc) }
-  scope :accepted, -> { where(accepted: true) }
-  scope :pending, -> { where(accepted: false) }
-  scope :from_user, -> (user){ where(user_id: user.id) }
+  scope :accepted, -> { where(accepted: true).order(rating: :desc) }
+  scope :pending, -> { where(accepted: false).order(rating: :desc) }
+  scope :from_user, -> (user){ where(user_id: user.id).order(created_at: :desc) }
 
 end
