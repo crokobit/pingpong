@@ -32,11 +32,11 @@
           - else
             - if reviewer?
               .bubble__vote
-                - if pong.voted_down? current_user
-                  = link_to 'Up!', up_pong_rates_path(pong), method: :post
-                - else
-                  %span Voted up!
                 - if pong.voted_up? current_user
-                  = link_to 'Down!', down_pong_rates_path(pong), method: :post
+                  %span Voted up!
                 - else
+                  = link_to 'Up!', up_pong_rates_path(pong), method: :post
+                - if pong.voted_down? current_user
                   %span Voted down!
+                - else
+                  = link_to 'Down!', down_pong_rates_path(pong), method: :post
