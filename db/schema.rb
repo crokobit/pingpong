@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140305085646) do
+ActiveRecord::Schema.define(version: 20140314124842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,10 +28,22 @@ ActiveRecord::Schema.define(version: 20140305085646) do
     t.integer  "dhh_score",   default: 0
     t.integer  "user_score",  default: 0
     t.text     "answer"
+    t.integer  "rates_count", default: 0
   end
 
   add_index "pongs", ["accepted"], name: "index_pongs_on_accepted", using: :btree
   add_index "pongs", ["user_id"], name: "index_pongs_on_user_id", using: :btree
+
+  create_table "rates", force: true do |t|
+    t.integer  "pong_id"
+    t.boolean  "up",         default: false
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rates", ["pong_id"], name: "index_rates_on_pong_id", using: :btree
+  add_index "rates", ["user_id"], name: "index_rates_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"

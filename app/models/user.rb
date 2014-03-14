@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   has_many :pongs
   has_many :votes
+  has_many :rates
 
   def to_s
     nickname || name || email

@@ -1,6 +1,7 @@
 class Pong < ActiveRecord::Base
 
   has_many :votes
+  has_many :rates
   belongs_to :user
 
   validates :gist, :description, presence: true

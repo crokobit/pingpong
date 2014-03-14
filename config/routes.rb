@@ -13,6 +13,12 @@ Pingpong::Application.routes.draw do
         post :user
       end
     end
+    resources :rates, only: [] do
+      collection do
+        post :up
+        post :down
+      end
+    end
   end
 
   get '/auth/:provider/callback' => 'sessions#create'

@@ -30,5 +30,5 @@
           - else
             - if reviewer? or admin?
               .bubble__vote
-                = link_to 'Up!', '#'
-                = link_to 'Down!', '#'
+                = link_to 'Up!', up_pong_rates_path(pong), method: :post
+                = link_to 'Down!', down_pong_rates_path(pong), method: :post
