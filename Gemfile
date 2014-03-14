@@ -15,6 +15,8 @@ gem 'simple_form'
 gem 'decent_exposure'
 gem 'draper'
 gem 'newrelic_rpm'
+gem 'recursive-open-struct'
+
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'sass', '~> 3.3.0'
