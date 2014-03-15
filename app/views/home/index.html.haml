@@ -17,7 +17,7 @@
           - if user_signed_in?
             = link_to "#{(reviewer? ? 'Submitted' : 'My')} pongs", pongs_path, class: 'btn--lg visible-xs'
 = render 'shared/share', label: 'Pretty cool, huh? Share!', twt: { text: "Wow, I've just played a code ping pong with @DHH", via: 'codepingpong' }
-%section.steps
+%section.steps.border-top
   .container
     .row
       .col-lg-10.col-lg-offset-1
