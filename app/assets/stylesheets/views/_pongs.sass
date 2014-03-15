@@ -109,6 +109,13 @@
 
 .pongs-index
 
+  .box
+    margin: 50px auto 80px auto
+    @media (min-width: $screen-sm)
+      margin: 150px auto 180px auto
+    .btn--lg
+      display: block
+
   h2
     margin: 15px 0 20px 0
     font-size: 23px
@@ -128,7 +135,9 @@
       font-size: 19px
       margin: -1px 0 20px 70px
       @media (max-width: $screen-sm)
-        margin: 10px 0 11px 0
+        +font-family($regular-font-family, 400)
+        margin: 5px 0 11px 0
+        font-size: 15px
     &__img
       +circle(50px)
       position: absolute

@@ -10,6 +10,11 @@
         @extend .bold
         &:hover
           color: $hover-color
+  @media (max-width: $screen-sm + 1)
+    .btn--lg
+      width: 100%
+      margin-bottom: 5px
+      display: block
 
   @media (min-width: $screen-sm)
     .text-intro
@@ -25,13 +30,11 @@
         line-height: 36px
 
   .steps
-    margin-bottom: 15px
-    padding-top: 25px
+    padding: 25px 0 15px 0
     .lead
       margin-bottom: 15px
     @media (min-width: $screen-sm)
-      padding-top: 56px
-      margin-bottom: 50px
+      padding: 56px 0 50px 0
       .lead
         margin-bottom: 35px
 

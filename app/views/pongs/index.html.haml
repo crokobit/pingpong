@@ -1,5 +1,11 @@
 .container
-  = render 'pongs/pongs', pongs: my_pongs, title: 'My ping-pongs'
+  - if current_user.has_any_pongs?
+    = render 'pongs/pongs', pongs: my_pongs, title: 'My ping-pongs'
+  - else
+    .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
+      .box
+        %h3.box__title.text-center You haven't submitted any pongs
+        = link_to 'Submit your ping-pong', new_pong_path, class: 'btn--lg'
   - if admin? or reviewer?
     = render 'pongs/pongs', pongs: accepted_pongs, title: 'Accepted ping-pongs'
     = render 'pongs/pongs', pongs: pending_pongs, title: 'Pending ping-pongs'
