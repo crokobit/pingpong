@@ -20,7 +20,8 @@
           .bubble__info
             %h3
               = "#{user} propsed"
-              %span.label.label-default= "score: #{pong.rating}"
+              - if reviewer?
+                %span.label.label-default= "score: #{pong.rating}"
             %p= pong.description
           - if pong.accepted?
             .bubble__vote

@@ -10,6 +10,7 @@
             = gravatar_image_tag(p.user.email, 64, 'pong__img')
             %h3.pong__title
               = p.user
-              %span.label.label-default= "score: #{p.rating}"
+              - if reviewer?
+                %span.label.label-default= "score: #{p.rating}"
             %p.lead.pong__body= p.description
             = link_to '', p, class: 'box-link'

@@ -1,4 +1,5 @@
 .container
   = render 'pongs/pongs', pongs: my_pongs, title: 'My ping-pongs'
-  = render 'pongs/pongs', pongs: accepted_pongs, title: 'Accepted ping-pongs'
-  = render 'pongs/pongs', pongs: pending_pongs, title: 'Pending ping-pongs'
+  - if admin? or reviewer?
+    = render 'pongs/pongs', pongs: accepted_pongs, title: 'Accepted ping-pongs'
+    = render 'pongs/pongs', pongs: pending_pongs, title: 'Pending ping-pongs'
