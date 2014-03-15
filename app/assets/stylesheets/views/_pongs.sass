@@ -59,7 +59,7 @@
       font-size: 23px
     &__info
       padding: 15px 23px 19px 23px
-    &__vote, &__score
+    &__vote, &__score, &__result
       +font-family($regular-font-family, 700)
       width: 100%
       border-top: 3px solid $border-color
@@ -77,12 +77,28 @@
       a:hover, span
         background: $border-color
         color: $white
-    &__score
-      padding: 40px 0 48px 0
-      font-size: 80px
+    &__data
+      position: relative
+      overflow: hidden
+    &__score, &__result
+      padding: 30px 0 38px 0
+      font-size: 60px
       @media (max-width: $screen-sm)
         padding: 20px 0 24px 0
         font-size: 40px
+    &__result
+      +transition(top, 0.3s)
+      position: absolute
+      top: 200px
+      left: 0
+      background: $white
+    &__data
+      position: relative
+      overflow: hidden
+      &:hover
+        .bubble__result
+          top: 0
+
 
   @mixin player($side)
     $opposite: left

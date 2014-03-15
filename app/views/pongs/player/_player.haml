@@ -13,7 +13,9 @@
                 %span Voted for DHH
               - else
                 = link_to 'Vote!', dhh_pong_votes_path(pong), method: :post
-            %p.bubble__score= "#{pong.dhh_prc}%"
+            .bubble__data
+              %p.bubble__score= "#{pong.dhh_prc}%"
+              %p.bubble__result= points_label(pong.dhh_score)
       - else
         = gravatar_image_tag(user.email, 64, 'player__img')
         .bubble
@@ -29,7 +31,9 @@
                 %span Voted for #{user}
               - else
                 = link_to 'Vote!', user_pong_votes_path(pong), method: :post
-            %p.bubble__score= "#{pong.user_prc}%"
+            .bubble__data
+              %p.bubble__score= "#{pong.user_prc}%"
+              %p.bubble__result= points_label(pong.user_score)
           - else
             - if reviewer?
               .bubble__vote
