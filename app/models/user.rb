@@ -32,4 +32,8 @@ class User < ActiveRecord::Base
     "https://github.com/#{nickname}"
   end
 
+  def has_any_pongs?
+    reviewer? or !pongs.count.zero?
+  end
+
 end
