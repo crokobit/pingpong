@@ -4,7 +4,7 @@ class PongDecorator < Draper::Decorator
 
   def user_prc
     if !votes_count.zero?
-      (object.user_score.to_f / object.votes_count) * 100
+      ((object.user_score.to_f / object.votes_count) * 100).round(2)
     else
       50
     end
@@ -12,7 +12,7 @@ class PongDecorator < Draper::Decorator
 
   def dhh_prc
     if !votes_count.zero?
-      (object.dhh_score.to_f / object.votes_count) * 100
+      ((object.dhh_score.to_f / object.votes_count) * 100).round(2)
     else
       50
     end
