@@ -24,9 +24,9 @@ module ApplicationHelper
     end
   end
 
-  def tweet_button
+  def tweet_button params
     content_tag(:div, class: 'twt-box pull-left') do
-      link_to 'Tweet', 'https://twitter.com/share', class: 'twitter-share-button hidden-xs', data: { lang: 'en' }
+      link_to 'Tweet', 'https://twitter.com/share', class: 'twitter-share-button hidden-xs', data: { lang: 'en', url: params[:url], via: params[:via], text: params[:text] }
     end
   end
 
