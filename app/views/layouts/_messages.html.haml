@@ -1,6 +1,13 @@
 .messages
   .container
+
     - flash.each do |name, msg|
       - if msg.is_a?(String)
         %div{ class: "alert alert-#{name.to_s == 'notice' ? 'success' : 'danger'}" }
           %div{ id: "flash_#{name}" }= msg
+    - if user_signed_in? and current_user.email.blank?
+      .row
+        .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
+          = simple_form_for current_user do |f|
+            = f.input :email, label: 'Sorry but we need your email too. Submit when suitable.'
+            = f.button :submit, 'Save email', class: 'btn--lg btn--block'

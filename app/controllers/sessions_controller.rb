@@ -18,7 +18,6 @@ class SessionsController < ApplicationController
       redirect_to root_url, :notice => 'Signed in!'
     end
 
-
   end
 
   def destroy

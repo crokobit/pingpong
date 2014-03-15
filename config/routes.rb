@@ -21,6 +21,8 @@ Pingpong::Application.routes.draw do
     end
   end
 
+  resources :users, only: [:edit, :update]
+
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signin' => 'sessions#new', :as => :signin
   get '/signout' => 'sessions#destroy', :as => :signout
