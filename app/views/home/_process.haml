@@ -13,7 +13,7 @@
             %span.browser__bar__spot
           .browser__body
             = image_tag 'page.png'
-            %span.spot.comments
-            %span.spot.dhhs-response
-            %span.spot.your-entry
-            %span.spot.votes
+            %span.spot.comments{ title: 'Everybody can comment', rel: 'tooltip', data: { toggle: 'tooltip', placement: 'left', trigger: 'manual' } }
+            %span.spot.your-entry{ title: 'Your entry', rel: 'tooltip', data: { toggle: 'tooltip', placement: 'right', trigger: 'manual' } }
+            %span.spot.dhhs-response{ title: "DHH's response", rel: 'tooltip', data: { toggle: 'tooltip', placement: 'right', trigger: 'manual' } }
+            %span.spot.votes{ title: 'Community votes', rel: 'tooltip', data: { toggle: 'tooltip', placement: 'right', trigger: 'manual' } }

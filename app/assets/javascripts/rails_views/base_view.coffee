@@ -9,6 +9,7 @@ class PingPong.RailsViews.BaseView extends Backbone.View
     @initFacebook()
     @initTwitter()
     $('a[rel=tooltip]').tooltip()
+    $('.browser__body span').tooltip('show')
     @closeAlerts()
 
   closeAlerts: () ->
