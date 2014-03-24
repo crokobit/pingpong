@@ -78,6 +78,24 @@
       width: 700px
       margin: 0 auto
       height: 480px
+      position: relative
+      @mixin position($left, $top)
+        left: $left
+        top: $top
+      .spot
+        +circle(15px)
+        background: $white
+        border: 2px solid $base-color
+        position: absolute
+        &.comments
+          +position(161px, 404px)
+        &.dhhs-response
+          +position(357px, 174px)
+        &.votes
+          +position(330px, 104px)
+        &.your-entry
+          +position(17px, 174px)
+
 
   .rockets
     $size: 241px
