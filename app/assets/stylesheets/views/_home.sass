@@ -60,6 +60,25 @@
     &:hover
       border-color: $base-color
 
+  .browser
+    +border-top-radius(8px)
+    width: 100%
+    margin: 0 auto
+    border: 2px solid $border-color
+    border-bottom: 0
+    &__bar
+      padding: 4px 0 0 11px
+      height: 32px
+      border-bottom: 2px solid $border-color
+      &__spot
+        +circle(10px)
+        border: 2px solid $border-color
+        display: inline-block
+    &__body
+      width: 610px
+      margin: 0 auto
+      height: 374px
+
   .rockets
     $size: 241px
     margin: 30px auto 0
