@@ -13,7 +13,5 @@
             %span.browser__bar__spot
           .browser__body
             = image_tag 'page.png'
-            %span.spot.comments{ title: 'Everybody can comment', rel: 'tooltip', data: { toggle: 'tooltip', placement: 'left', trigger: 'manual' } }
-            %span.spot.your-entry{ title: 'Your entry', rel: 'tooltip', data: { toggle: 'tooltip', placement: 'right', trigger: 'manual' } }
-            %span.spot.dhhs-response{ title: "DHH's response", rel: 'tooltip', data: { toggle: 'tooltip', placement: 'right', trigger: 'manual' } }
-            %span.spot.votes{ title: 'Community votes', rel: 'tooltip', data: { toggle: 'tooltip', placement: 'right', trigger: 'manual' } }
+            - [['comments', 'Everybody can comment', 'left'], ['your-entry', 'Your entry', 'right'], ['dhhs-response', "DHH's response", 'right'], ['votes', 'Community votes', 'right']].each do |css_class, text, placement|
+              %span.spot{ class: css_class, title: text, rel: 'tooltip', data: { toggle: 'tooltip', placement: placement, trigger: 'manual' } }
