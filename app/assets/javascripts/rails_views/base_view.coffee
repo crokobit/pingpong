@@ -14,7 +14,7 @@ class PingPong.RailsViews.BaseView extends Backbone.View
 
   closeAlerts: () ->
     setInterval (=>
-      $('.alert').slideUp(600)
+      $('.alert-success, .alert-danger').slideUp(600)
     ), 3000
 
   initFacebook: () ->
