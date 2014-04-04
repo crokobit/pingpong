@@ -13,10 +13,11 @@
             .row
               .col-lg-12
                 .pong{ class: cycle('odd', 'even') }
-                  = gravatar_image_tag(p.user.email, 64, 'pong__img')
-                  %h3.pong__author= p.user.name.to_s
-                  %p.pong__intro= p.intro
-                  %span.clearfix
+                  .pong__img= gravatar_image_tag(p.user.email, 64)
+                  .pong__author
+                    %h3= p.user.name.to_s
+                    %p.pong__intro= p.intro
+                  .clearfix
                   %p.pong__score
                     %span= "#{p.user_prc}%"
                   = link_to 'Join discussion', pong_path(p), class: 'pong__link'
