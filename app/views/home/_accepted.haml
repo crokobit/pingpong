@@ -12,7 +12,7 @@
           - pongs.each do |p|
             .row
               .col-lg-12
-                .pong
+                .pong{ class: cycle('odd', 'even') }
                   = gravatar_image_tag(p.user.email, 64, 'pong__img')
                   %h3.pong__author= p.user.name.to_s
                   %p.pong__intro= p.intro
