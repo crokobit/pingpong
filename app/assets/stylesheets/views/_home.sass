@@ -125,11 +125,8 @@
       display: block
       span
         @extend h3
-        +transform(translateY(-50%))
+        @extend %centered-verticaly
         font-size: 37px
-        position: relative
-        top: 50%
-        display: block
     &__author
       margin-left: 50px
       @media (min-width: $screen-sm)
@@ -147,14 +144,16 @@
       top: -2px
     &__link
       @extend .box-link
-      @extend h3
-      padding-top: 27px
       text-indent: -2000px
-      color: $white
       text-align: center
+      overflow: hidden
       &:hover
         background: rgba($base-color, .9)
         text-indent: 0
+      span
+        @extend h3
+        @extend %centered-verticaly
+        color: $white
 
   .rockets
     $size: 241px
