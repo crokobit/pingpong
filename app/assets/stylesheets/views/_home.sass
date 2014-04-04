@@ -114,7 +114,9 @@
     &__img
       position: absolute
       img
-        +circle(62px)
+        +circle(36px)
+        @media (min-width: $screen-sm)
+          +circle(62px)
     &__score
       height: 100%
       position: absolute
@@ -129,14 +131,18 @@
         top: 50%
         display: block
     &__author
-      margin-left: 86px
+      margin-left: 50px
+      @media (min-width: $screen-sm)
+        margin-left: 86px
       h3
         margin: 0
         font-size: 21px
     &__intro
       +font-family($light-font-family, 300)
-      padding-right: 140px
-      font-size: 19px
+      font-size: 15px
+      @media (min-width: $screen-sm)
+        padding-right: 140px
+        font-size: 19px
       position: relative
       top: -2px
     &__link
