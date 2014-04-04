@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140314125742) do
+ActiveRecord::Schema.define(version: 20140404094745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140314125742) do
     t.text     "answer"
     t.integer  "rates_count", default: 0
     t.integer  "rating",      default: 0
+    t.text     "intro"
   end
 
   add_index "pongs", ["accepted"], name: "index_pongs_on_accepted", using: :btree

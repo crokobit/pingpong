@@ -11,4 +11,5 @@
           - unless is_new
             = f.input :dhh_gist, label: false, placeholder: 'Gist url with the code to answer'
             = f.input :answer, as: :text, label: false, placeholder: 'Write a 1-2 sentences with the answer'
+            = f.input :intro, as: :text, label: false, placeholder: 'Intro for index'
           = f.button :submit, 'Save ping-pong', class: 'btn--lg btn--block'
