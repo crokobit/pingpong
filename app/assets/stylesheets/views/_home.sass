@@ -134,6 +134,16 @@
       font-size: 19px
       position: relative
       top: -2px
+    &__link
+      @extend .box-link
+      @extend h3
+      padding-top: 27px
+      text-indent: -2000px
+      color: $white
+      text-align: center
+      &:hover
+        background: rgba($base-color, .9)
+        text-indent: 0
 
   .rockets
     $size: 241px

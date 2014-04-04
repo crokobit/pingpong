@@ -3,7 +3,7 @@
     .alert.alert-info
       %div We're currently reviewing all submitted pongs.
 = render 'intro'
-= render 'accepted'
+= render 'accepted' if params[:preview]
 = render 'process'
 = render 'shared/share', label: 'Pretty cool, huh? Share!', twt: { text: "Wow, I've just played a code ping pong with @DHH", via: 'codepingpong' }
 = render 'steps'
