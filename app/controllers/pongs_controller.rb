@@ -67,7 +67,7 @@ class PongsController < ApplicationController
   end
 
   def pong_params
-    params.fetch(:pong, {}).permit(:gist, :description, :dhh_gist, :answer)
+    params.fetch(:pong, {}).permit(:gist, :description, :dhh_gist, :answer, :intro)
   end
 
   def check_submissions_status

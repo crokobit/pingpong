@@ -29,7 +29,7 @@
         margin-bottom: 40px
         line-height: 36px
 
-  .steps, .process
+  .steps, .process, .accepted
     padding: 25px 0 15px 0
     .lead
       margin-bottom: 15px
@@ -101,6 +101,39 @@
         &.your-entry
           +position(17px, 174px)
 
+  .pongs
+    @extend .border-top
+
+  .pong
+    @extend .border-bottom
+    padding: 15px
+    position: relative
+    &__img
+      +circle(62px)
+      margin-right: 18px
+      float: left
+    &__score
+      height: 100%
+      position: absolute
+      top: 0
+      right: 15px
+      display: block
+      span
+        @extend h3
+        +transform(translateY(-50%))
+        font-size: 37px
+        position: relative
+        top: 50%
+        display: block
+    &__author
+      margin: 0
+      font-size: 21px
+    &__intro
+      +font-family($light-font-family, 300)
+      padding-right: 140px
+      font-size: 19px
+      position: relative
+      top: -2px
 
   .rockets
     $size: 241px

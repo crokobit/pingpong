@@ -4,3 +4,17 @@
       .col-lg-10.col-lg-offset-1
         %h3.text-center Join the discussion
         %p.lead.text-center Here we go! 5 pongs selected for DHH
+
+  .container
+    .row
+      .col-lg-10.col-lg-offset-1
+        .pongs
+          - pongs.each do |p|
+            .row
+              .col-lg-12
+                .pong
+                  = gravatar_image_tag(p.user.email, 64, 'pong__img')
+                  %h3.pong__author= p.user.name.to_s
+                  %p.pong__intro= p.intro
+                  %p.pong__score
+                    %span= "#{p.user_prc}%"
