@@ -16,6 +16,7 @@
                   = gravatar_image_tag(p.user.email, 64, 'pong__img')
                   %h3.pong__author= p.user.name.to_s
                   %p.pong__intro= p.intro
+                  %span.clearfix
                   %p.pong__score
                     %span= "#{p.user_prc}%"
                   = link_to 'Join discussion', pong_path(p), class: 'pong__link'
