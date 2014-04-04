@@ -16,6 +16,11 @@ class PongsController < ApplicationController
   end
 
   def new
+    if PublicConfig.open_for_submissions or params[:token] == PublicConfig.submissions_token
+      render(:new)
+    else
+      render(:closed)
+    end
   end
 
   def edit
@@ -71,7 +76,9 @@ class PongsController < ApplicationController
   end
 
   def check_submissions_status
-    redirect_to new_pong_path unless PublicConfig.open_for_submissions
+    if params[:pong][:token] != PublicConfig.submissions_token and !PublicConfig.open_for_submissions
+      redirect_to new_pong_path
+    end
   end
 
 end

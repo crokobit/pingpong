@@ -6,6 +6,7 @@
       .box
         %h1.box__title= title
         = simple_form_for target_pong do |f|
+          = f.input :token, as: :hidden, input_html: { value: params[:token] }
           = f.input :gist, label: false, placeholder: 'Add a gist url with your code here'
           = f.input :description, as: :text, label: false, placeholder: 'Write a 1-2 sentences what the gist is about'
           - unless is_new
