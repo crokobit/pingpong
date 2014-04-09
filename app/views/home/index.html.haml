@@ -1,7 +1,8 @@
 - unless PublicConfig.open_for_submissions
   .container
     .alert.alert-info
-      %div Yaay! DHH has replied to first pong!
+      %div
+        Yaay! DHH has replied to #{link_to('the first pong', 'http://www.dhh-ping-pong.com/pongs/13')}!
 = render 'intro'
 = render 'accepted'
 = render 'process'

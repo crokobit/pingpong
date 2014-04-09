@@ -24,7 +24,7 @@
               = "#{user} propsed"
               - if reviewer?
                 %span.label.label-default= "score: #{pong.rating}"
-            %p= pong.description
+            %p= pong.description.html_safe
           - if pong.accepted?
             .bubble__vote
               - if pong.voted_for_user? current_user
