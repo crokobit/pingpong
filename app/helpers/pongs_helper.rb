@@ -1,7 +1,7 @@
 module PongsHelper
 
   def points_label score
-    pluralize(score, 'pt', 'pts')
+    pluralize(score, 'vote', 'votes')
   end
 
 end
