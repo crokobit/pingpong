@@ -1,9 +1,9 @@
 - unless PublicConfig.open_for_submissions
   .container
     .alert.alert-info
-      %div We're currently reviewing all submitted pongs.
+      %div Yaay! DHH has replied to first pong!
 = render 'intro'
-= render 'accepted' if params[:preview]
+= render 'accepted'
 = render 'process'
 = render 'shared/share', label: 'Pretty cool, huh? Share!', twt: { text: "Wow, I've just played a code ping pong with @DHH", via: 'codepingpong' }
 = render 'steps'
