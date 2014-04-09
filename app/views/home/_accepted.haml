@@ -19,6 +19,9 @@
                     %p.pong__intro= p.intro
                   .clearfix
                   %p.pong__score.hidden-xs
-                    %span= "#{p.user_prc}%"
+                    %span
+                      = p.user_score
+                      %span vs
+                      = p.dhh_score
                   = link_to pong_path(p), class: 'pong__link' do
                     %span Join discussion
