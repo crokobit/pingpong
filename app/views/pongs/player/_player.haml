@@ -6,7 +6,7 @@
         .bubble
           .bubble__info
             %h3 DHH replied
-            %p= pong.accepted? ? pong.answer : 'No answer yet. Ping-pong not accepted.'
+            %p= pong.accepted? ? pong.answer.html_safe : 'No answer yet. Ping-pong not accepted.'
           - if pong.accepted?
             .bubble__vote
               - if pong.voted_for_dhh? current_user
