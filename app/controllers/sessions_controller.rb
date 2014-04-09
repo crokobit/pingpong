@@ -1,14 +1,15 @@
 class SessionsController < ApplicationController
 
   def new
+    session[:location] = request.referer
     redirect_to '/auth/github'
   end
 
   def create
+    location = session[:location]
     auth = request.env["omniauth.auth"]
     user = User.where(:provider => auth['provider'],
                       :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
-    location = request.referer
     reset_session
     session[:user_id] = user.id
     if location.present?
