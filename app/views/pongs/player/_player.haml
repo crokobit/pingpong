@@ -21,7 +21,7 @@
         .bubble
           .bubble__info
             %h3
-              = "#{user} propsed"
+              = "#{user} proposed"
               - if reviewer?
                 %span.label.label-default= "score: #{pong.rating}"
             %p= pong.description.html_safe
