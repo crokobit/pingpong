@@ -8,11 +8,6 @@
             %h3 DHH replied
             %p= pong.accepted? ? pong.answer.html_safe : 'No answer yet. Ping-pong not accepted.'
           - if pong.accepted?
-            .bubble__vote
-              - if pong.voted_for_dhh? current_user
-                %span Voted for DHH
-              - else
-                = link_to 'Vote!', dhh_pong_votes_path(pong), method: :post
             .bubble__data
               %p.bubble__score= points_label(pong.dhh_score)
               %p.bubble__result= "#{pong.dhh_prc}%"
@@ -26,22 +21,6 @@
                 %span.label.label-default= "score: #{pong.rating}"
             %p= pong.description.html_safe
           - if pong.accepted?
-            .bubble__vote
-              - if pong.voted_for_user? current_user
-                %span Voted for #{user}
-              - else
-                = link_to 'Vote!', user_pong_votes_path(pong), method: :post
             .bubble__data
               %p.bubble__score= points_label(pong.user_score)
               %p.bubble__result= "#{pong.user_prc}%"
-          - else
-            - if reviewer?
-              .bubble__vote
-                - if pong.voted_up? current_user
-                  %span Voted up!
-                - else
-                  = link_to 'Up!', up_pong_rates_path(pong), method: :post
-                - if pong.voted_down? current_user
-                  %span Voted down!
-                - else
-                  = link_to 'Down!', down_pong_rates_path(pong), method: :post

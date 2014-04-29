@@ -4,16 +4,4 @@ class RatesController < ApplicationController
 
   before_filter :authenticate_reviewer!
 
-  def up
-    rate.up = true
-    rate.save
-    redirect_to pong
-  end
-
-  def down
-    rate.up = false
-    rate.save
-    redirect_to pong
-  end
-
 end

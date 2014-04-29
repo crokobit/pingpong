@@ -13,12 +13,7 @@ Pingpong::Application.routes.draw do
         post :user
       end
     end
-    resources :rates, only: [] do
-      collection do
-        post :up
-        post :down
-      end
-    end
+    resources :rates, only: []
   end
 
   resources :users, only: [:edit, :update]
