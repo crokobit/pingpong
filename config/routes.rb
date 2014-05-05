@@ -7,12 +7,7 @@ Pingpong::Application.routes.draw do
     member do
       post :toggle
     end
-    resources :votes, only: [] do
-      collection do
-        post :dhh
-        post :user
-      end
-    end
+    resources :votes, only: []
     resources :rates, only: []
   end
 
